@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Shopping</title>
+
+	 <!-- css external link -->
+	<link rel="stylesheet" type="text/css" href="./style.css">
+
+	  <!-- Bootstrap cdn link -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- font-awesome cdn link -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <!-- animation on scroll cdn link -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+	    <header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            
+            <div class="container-fluid">
+              <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                     <span class="sr-only">Toggle navigation</span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><i class="fa-brands fa-shopware"></i> Online Store</a>
+                </div>
+          
+             <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#home">Home<span class="sr-only">(current)</span></a></li>
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="#sunglass">Sun Glass</a></li>
+                              <li><a href="#watch">Watches</a></li>
+                              <li><a href="#cloth">Cloths</a></li>
+                              <li><a href="#shoe">shoes</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#about">About</a></li>
+                        <li class="dropdown">
+                          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LogIn<span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="./php/signin.php">User</a></li>
+                            <li><a href="./php/admin.php">Admin</a></li>
+                          </ul>
+                        </li>
+                        <li><button class="btn btn-primary bagCart" ><i class="fa-solid fa-bag-shopping bag-cart" id="bag-cart" onclick="btn()"></i>
+                        <div class="cart-count" id="cart-count">0</div></button></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+
+    
+    
+    <section>   
+
+        <div class="addtocart" id="addtocart">
+        <i class="fa-sharp fa-solid fa-xmark" id="close-cart"></i>
+        <div class="cart-title">Cart Items</div><hr>
+        <div class="cart-contant" id="cart-contant">
+         <!--  <div class="cart-box">
+            <img src="./asset/sunglass/glass.avif">
+            <div class="detail-box">
+              <div class="cart-food-title" id="cart-item-title">Sun Glass</div>
+              <div class="price-box">
+                <div class="cart-price">RS : 50</div>
+                <div class="cart-amt">RS : 50</div>
+              </div>
+              <input type="number" value="1" class="cart-quantity">
+            </div>
+            <i class="fa-solid fa-trash" id="cart-remove"></i>
+          </div> 
+
+          <div class="cart-box">
+            <img src="./asset/sunglass/glass.avif">
+            <div class="detail-box">
+              <div class="cart-food-title">Sun Glass</div>
+              <div class="price-box">
+                <div class="cart-price" id="cart-price">RS : 50</div>
+                <div class="cart-amt" id="cart-amt">RS : 50</div>
+              </div>
+              <input type="number" value="1" class="cart-quantity" id="cart-quantity">
+            </div>
+            <i class="fa-solid fa-trash" id="cart-remove"></i>
+          </div>  
+          <select name="size" class="cart-size">
+          <option value="s">small</option>
+          <option value="m">small</option>
+          <option value="l">small</option>
+          <option value="xl">small</option>
+        </select> -->
+
+        </div> <!-- contant close-->
+
+        <div class="total">
+          <div class="total-title" >Total</div>
+          <div class="total-price" id="total-price">Rs : 0</div>
+          
+        </div>
+        
+        <button class="btn-buy" id="btn-buy">Place order</button>
+
+      </div>  
+      
+      <!-- contant close-->
+
+       
+
+
+         <!--home page-->
+      <div class="home" id="home" > 
+        <div class="container container-home">
+          <div class="row row-home">
+            <div class="home-left col-lg-6 col-md-6 col-12" data-aos="fade-right">
+              <h1>ONLINE STORE</h1>
+              <h4>Order Deliverable More Than 18Years!.</h4>
+              <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, consectetur.</p>
+              <a href="#shop" class="btn btn-primary">SHOP NOW</a>
+              <div class="icons">
+                <a href=""> <i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="home-right col-lg-6 col-md-6 col-12"  data-aos="fade-left">
+              <img src="./asset/rebg.png" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>  
+
+         <!-- shop -->
+      <div class="container-fluid container-shop" id="shop">
+        <h1 class="page-header text-center">SHOP WITH US</h1>
+        <div class="container">
+          <div class="cards">
+            <!-- card 1 -->
+            <div class="card">
+              <img src="./asset/glass.jpg">
+              <div class="overlay">
+                <a href="#sunglass" class="btn btn-primary"><em>SHOP</em></a>
+                <h5>SUN GLASSES</h5>
+              </div>
+            </div>
+            <!-- cart 2 -->
+            <div class="card">
+              <img src="./asset/watche.avif">
+              <div class="overlay">
+                <a href="#watch" class="btn btn-primary"><em>SHOP</em></a>
+                <h5>WATCHES</h5>
+              </div>
+            </div>
+            <!-- cart 3 -->
+            <div class="card">
+              <img src="./asset/cloth.jpg">
+              <div class="overlay">
+                <a href="#cloth" class="btn btn-primary"><em>SHOP</em></a>
+                <h5>CLOTH</h5>
+              </div>
+            </div>
+            <!-- catr 4 -->
+            <div class="card">
+              <img src="./asset/shoe.avif">
+              <div class="overlay">
+                <a href="#shoe" class="btn btn-primary"><em>SHOP</em></a>
+                <h5>SHOES</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+       <!-- shop manu page end-->
+
+      <!-- carousel start-->
+      <div class="container-fluid container-carosuel">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <div class="carousel-box">
+                <img src="">
+              </div>
+              <div class="carousel-caption"> 
+                <h3><em>SUMMER OFFER</em></h3>
+                <p>play game & Get instant 40% offer</p>
+              </div>
+            </div>
+ 
+            <div class="item">
+              <div class="carousel-box1">
+                <img src="">
+              </div>
+              <div class="carousel-caption"> 
+                <h3><em>COMING SOON</em></h3>
+                <p>Get one Buy one</p>
+              </div>
+            </div>
+    
+           <div class="item">
+              <div class="carousel-box2">
+                <img src="">
+              </div>
+              <div class="carousel-caption"> 
+                <h3><em>REFER FRIEND</em></h3>
+                <p>Get instant 20% offer</p>
+              </div>
+            </div>
+          </div>
+   
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide=" prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+          <!-- carousel End-->
+
+
+          <!-- cart start -->
+  <div class="container" >
+    <h2 class="page-header title">NEW ARRIVALS</h2>
+    <div class="shop-content">
+
+
+      
+  
+      <div class="food-box" id="sunglass">
+        <div class="pic"><img src="./asset/sunglass/glass1.avif" class="food-img"></div>
+        <h2 class="food-title">sun glass 1</h2>
+        <span class="food-price">Rs.25</span>
+         <div class="cart-size">
+          Available size : All
+        </div>
+        <span class="cart-icons">
+                  
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span><br>
+         <i class="fa-solid fa-cart-shopping add-cart"></i>
+      </div>
+  
+      <div class="food-box">
+        <div class="pic"><img src="./asset/sunglass/glass2.avif" class="food-img"></div>
+        <h2 class="food-title">sun glass 2</h2>
+        <span class="food-price">Rs.150</span>
+          <div class="cart-size">
+          Available size : All
+        </div>
+        <span>
+                  
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span><br>
+         <i class="fa-solid fa-cart-shopping add-cart"></i>
+      </div>
+  
+  
+      <div class="food-box">
+        <div class="pic"><img src="./asset/sunglass/glass3.avif" class="food-img"></div>
+        <h2 class="food-title">sun glass 3</h2>
+        <span class="food-price">Rs.65</span>
+        <div class="cart-size">
+          Available size : All
+        </div>
+        <span>
+                  
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span><br>
+         <i class="fa-solid fa-cart-shopping add-cart"></i>
+      </div>
+  
+  
+      <div class="food-box">
+        <div class="pic"><img src="./asset/sunglass/glass4.avif" class="food-img"></div>
+        <h2 class="food-title">Sun glass 4</h2>
+        <span class="food-price">Rs.65</span>
+         <div class="cart-size">
+          Available size : All
+        </div>
+        <span>
+                  
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span><br>
+         <i class="fa-solid fa-cart-shopping add-cart"></i>
+      </div>
+
+      <div class="food-box" id="watch">
+        <div class="pic">
+          <img src="./asset/watch/watch1.avif" class="food-img">
+        </div>
+        <h2 class="food-title">Watch 1</h2>
+        <span class="food-price">Rs.40</span>
+        <div class="cart-size">
+          Available size : All
+        </div>
+        <span>
+                  
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span><br>
+       <i class="fa-solid fa-cart-shopping add-cart"></i>
+      </div>
+
+
+      <div class="food-box">
+        <div class="pic"><img src="./asset/watch/watch2.avif" class="food-img"></div>
+        <h2 class="food-title">Watch 2</h2>
+        <span class="food-price">Rs.65</span>
+         <div class="cart-size">
+          Available size : All
+        </div>
+        <span>
+                  
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span><br>
+        <i class="fa-solid fa-cart-shopping add-cart"></i>
+      </div>
+  
+      <div class="food-box">
+        <div class="pic"><img src="./asset/watch/watch3.avif" class="food-img"></div>
+        <h2 class="food-title">watch 3</h2>
+        <span class="food-price">Rs.80</span>
+         <div class="cart-size">
+          Available size : All
+        </div>
+        <span>
+                  
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span><br>
+        <i class="fa-solid fa-cart-shopping add-cart"></i>
+      </div>
+  
+      <div class="food-box">
+        <div class="pic"><img src="./asset/watch/watch4.avif" class="food-img"></div>
+        <h2 class="food-title">Watch 4</h2>
+        <span class="food-price">Rs.55</span>
+         <div class="cart-size">
+          Available size : All
+        </div>
+        <span>
+                  
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span><br>
+         <i class="fa-solid fa-cart-shopping add-cart"></i>
+      </div>
+   
+    <div class="food-box" id="cloth"> 
+        <div class="pic">
+          <img src="./asset/cloth/cl1.jpeg" class="food-img">
+        </div>
+        <h2 class="food-title">cloth 1</h2>
+        <span class="food-price">Rs.40</span>
+        <div class="cart-size">
+          Available size : All
+        </div>
+        <span>
+                  
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span><br>
+         <i class="fa-solid fa-cart-shopping add-cart"></i>
+      </div>
+
+
+      <div class="food-box">
+        <div class="pic"><img src="./asset/cloth/cl2.jpeg" class="food-img"></div>
+        <h2 class="food-title">cloth 2</h2>
+        <span class="food-price">Rs.65</span>
+         <div class="cart-size">
+          Available size : All
+        </div>
+        <span>
+                  
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span><br>
+         <i class="fa-solid fa-cart-shopping add-cart"></i>
+      </div>
+  
+      <div class="food-box">
+        <div class="pic"><img src="./asset/cloth/cl3.webp" class="food-img"></div>
+        <h2 class="food-title">cloth 3</h2>
+        <span class="food-price">Rs.80</span>
+         <div class="cart-size">
+          Available size : All
+        </div>
+        <span>
+                  
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span><br>
+         <i class="fa-solid fa-cart-shopping add-cart"></i>
+      </div>
+  
+      <div class="food-box">
+        <div class="pic"><img src="./asset/cloth/cl4.jpg" class="food-img"></div>
+        <h2 class="food-title">cloth 4</h2>
+        <span class="food-price">Rs.55</span>
+         <div class="cart-size">
+          Available size : All
+        </div>
+        <span>
+                  
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span><br>
+         <i class="fa-solid fa-cart-shopping add-cart"></i>
+      </div>
+  
+      <div class="food-box" id="shoe">
+        <div class="pic"><img src="./asset/shoe/sh1.avif" class="food-img"></div>
+        <h2 class="food-title">shoe 1</h2>
+        <span class="food-price">Rs.25</span>
+         <div class="cart-size">
+          Available size : All
+        </div>
+        <span>
+                  
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span><br>
+         <i class="fa-solid fa-cart-shopping add-cart"></i>
+      </div>
+  
+      <div class="food-box">
+        <div class="pic"><img src="./asset/shoe/sh2.avif" class="food-img"></div>
+        <h2 class="food-title">shoe 2</h2>
+        <span class="food-price">Rs.150</span>
+        <div class="cart-size">
+          Available size : All
+        </div>
+        <span>
+                  
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span><br>
+         <i class="fa-solid fa-cart-shopping add-cart"></i>
+      </div>
+  
+  
+      <div class="food-box">
+        <div class="pic"><img src="./asset/shoe/sh3.avif" class="food-img"></div>
+        <h2 class="food-title">shoe 3</h2>
+        <span class="food-price">Rs.65</span>
+         <div class="cart-size">
+          Available size : All
+        </div>
+        <span>
+                  
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span><br>
+         <i class="fa-solid fa-cart-shopping add-cart"></i>
+      </div>
+  
+  
+      <div class="food-box">
+        <div class="pic"><img src="./asset/shoe/sh4.avif" class="food-img"></div>
+        <h2 class="food-title">shoe 4</h2>
+        <span class="food-price">Rs.65</span>
+        <div class="cart-size">
+          Available size : All
+        </div>
+        <span>
+                  
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </span><br>
+         <i class="fa-solid fa-cart-shopping add-cart"></i>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+          <!-- cart end -->
+
+           <div class="about" id="about">
+        <div class="container-fluid container-about">
+          <h1 class="page-header text-center">ABOUT</h1>
+          <div class="row">
+            <div class="about-left col-lg-6 col-md-6 col-12">
+              <h2 class="text-center">OUR STORY</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <h2 class="text-center">JOURNEY START FROM</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+              <img src="./asset/logo3.png" width="500px" height="400px">
+            </div>
+          </div> <hr>
+
+          <!-- row 2 Start-->
+          <div class="row contact">
+            <h2>Online Store</h2>
+            <div class="col-lg-6 col-md-6 col-12">
+              
+              <h3 class="page-header">Contact</h3>
+              <div class="contactIcons">
+               <P> <i class="fa-solid fa-envelope"></i>ace@gmail.com</P><br>
+               <p> <i class="fa-solid fa-phone"></i> +44444444</p><br>
+                <p><i class="fa-solid fa-location-dot"></i>153, North Veli Street (2nd Floor), Simmakkal, Madurai-625001, Madurai, Tamil Nadu 625001</p>
+                <div class="location">
+
+                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d413.1018745902144!2d78.12101965620167!3d9.924837192300213!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c58fed9bb01d%3A0x704c0e604aea3a36!2sACE%20WRITE%20-%20HANDWRITING%20SCHOOL!5e0!3m2!1sen!2sin!4v1679199385271!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+              </div>
+            </div>
+             <div class=" col-lg-6 col-md-6 col-12" style="padding:30px;">
+              <h3>Our Service</h3>
+               <ul>
+                 <li><a href="">Responsive Website</a></li>
+                 <li><a href="">Restaurent Website</a></li>
+                 <li><a href="">Shopping Website</a></li>
+               </ul>
+             </div>
+          </div>
+          <!-- row 2 End-->
+        </div>
+      </div>   <!--ABOUT PAGE END-->
+    </section>
+
+    <a href="#home" class="to-top">
+      <i class="fa-solid fa-circle-chevron-up"></i>
+    </a>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-12">
+            <h4>copyrights claim</h4>
+          </div>
+          <div class="col-lg-6 col-md-6 col-12">
+            <h4>made with surya prakash</h4>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    
+
+    
+
+  
+  
+	   
+
+
+
+
+
+
+
+
+
+
+
+  <!-- animation on scroll js file -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+ 
+
+ <script type="text/javascript" src="app.js"></script>
+
+  <script>
+  
+  </script>
+</body>
+</html>
